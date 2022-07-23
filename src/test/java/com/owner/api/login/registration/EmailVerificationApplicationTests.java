@@ -1,4 +1,4 @@
-package com.ms.emailverification;
+package com.owner.api.login.registration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

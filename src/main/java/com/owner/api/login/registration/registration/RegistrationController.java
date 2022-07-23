@@ -1,4 +1,4 @@
-package com.ms.emailverification.registration;
+package com.owner.api.login.registration.registration;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +12,6 @@ public class RegistrationController {
 
     @PostMapping
     public String register(@RequestBody RegistrationRequest request ) {
-        System.out.println("works");
-        System.out.print(request);
         return registrationService.register(request);
     }
 }

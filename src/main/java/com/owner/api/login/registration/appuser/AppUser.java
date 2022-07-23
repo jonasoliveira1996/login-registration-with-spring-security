@@ -1,6 +1,5 @@
-package com.ms.emailverification.appuser;
+package com.owner.api.login.registration.appuser;
 
-import com.ms.emailverification.appuser.AppUserRole;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,8 +36,8 @@ public class AppUser implements UserDetails {
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
-    private Boolean locked;
-    private Boolean enable;
+    private Boolean locked = false;
+    private Boolean enable = false;
 
     public AppUser(String firstName, String lastName, String email, String password,
                    AppUserRole appUserRole) {

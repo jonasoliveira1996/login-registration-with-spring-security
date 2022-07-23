@@ -1,6 +1,6 @@
-package com.ms.emailverification.security.config;
+package com.owner.api.login.registration.security.config;
 
-import com.ms.emailverification.appuser.AppUserService;
+import com.owner.api.login.registration.appuser.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,10 +25,10 @@ public class WebSecurityConfig{
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/api/v*/registration/**").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers(HttpMethod.GET, "/api/v*/registration/**").permitAll()
+                .anyRequest().permitAll()
                 .and()
-                .authenticationProvider(daoAuthenticationProvider())
-                .formLogin().permitAll();
+                .authenticationProvider(daoAuthenticationProvider());
         return http.build();
     }
 

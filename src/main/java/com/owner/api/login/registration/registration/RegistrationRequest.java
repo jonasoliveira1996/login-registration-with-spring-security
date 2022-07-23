@@ -1,4 +1,4 @@
-package com.ms.emailverification.registration;
+package com.owner.api.login.registration.registration;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
