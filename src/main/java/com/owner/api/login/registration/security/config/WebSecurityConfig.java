@@ -26,9 +26,10 @@ public class WebSecurityConfig{
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/api/v*/registration/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v*/registration/**").permitAll()
-                .anyRequest().permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .authenticationProvider(daoAuthenticationProvider());
+                .authenticationProvider(daoAuthenticationProvider())
+                .formLogin().permitAll();
         return http.build();
     }
 
